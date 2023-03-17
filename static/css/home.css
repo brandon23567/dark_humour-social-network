@@ -1,0 +1,151 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	background-color: #222;
+}
+
+body{
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
+
+	position: sticky;
+	top: 0;
+	z-index: 999;
+}
+
+.logo{
+	cursor: pointer;
+}
+
+.logo h2{
+	color: cadetblue;
+	font-size: 1.8rem;
+}
+
+.navbar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar li{
+	list-style: none;
+	margin: 0 1rem;
+}
+
+.navbar li a{
+	text-decoration: none;
+	color: cadetblue;
+	font-size: 18px;
+}
+
+.hamburger{
+	display: none;
+	cursor: pointer;
+}
+
+.bar{
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	transition: all 0.3s ease-in-out;
+	background-color: cadetblue;
+}
+
+.main_posts_container{
+	display: flex;
+	flex-direction: column;
+	margin-top: 1.3rem;
+}
+
+.main_posts_container .post{
+	border: 2px solid cadetblue;
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.main_posts_container .post .top_part{
+	margin-bottom: 1.5rem;
+}
+
+.main_posts_container .post .top_part p{
+	color: grey;
+	line-height: 30px;
+	font-size: 1.3rem;
+}
+
+.main_posts_container .post .bottom_part{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.main_posts_container .post .bottom_part span{
+	color: grey;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+footer{
+	padding: 1.2rem;
+	color: grey;
+	font-size: 1.3rem;
+	border-top: 1px solid cadetblue;
+}
+
+@media screen and (max-width: 1080px) {
+	/*body{
+		display: none;
+	}*/
+
+	.hamburger{
+		display: block;
+	}
+
+	.hamburger.active .bar:nth-child(2){
+		opacity: 0;
+	}
+
+	.hamburger.active .bar:nth-child(1){
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	.hamburger.active .bar:nth-child(3){
+		transform: translateY(-8px) rotate(-45deg);
+	}
+
+	.navbar{
+		position: fixed;
+		left: -100%;
+		top: 70px;
+		gap: 0;
+		flex-direction: column;
+		width: 100%;
+		text-align: center;
+		transition: 0.3s;
+	}
+
+	.navbar li{
+		margin: 16px 0;
+	}
+
+	.navbar.active{
+		left: 0;
+	}
+
+	.main_posts_container{
+		margin: 1rem;
+	}
+}

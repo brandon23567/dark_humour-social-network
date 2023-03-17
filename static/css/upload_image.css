@@ -1,0 +1,143 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	background-color: #222;
+	color: grey;
+}
+
+body{
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
+
+	position: sticky;
+	top: 0;
+	z-index: 999;
+}
+
+.logo{
+	cursor: pointer;
+}
+
+.logo h2{
+	color: cadetblue;
+	font-size: 1.8rem;
+}
+
+.navbar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar li{
+	list-style: none;
+	margin: 0 1rem;
+}
+
+.navbar li a{
+	text-decoration: none;
+	color: cadetblue;
+	font-size: 18px;
+}
+
+.hamburger{
+	display: none;
+	cursor: pointer;
+}
+
+.bar{
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	transition: all 0.3s ease-in-out;
+	background-color: cadetblue;
+}
+
+.actual_form{
+	padding: 2rem;
+}
+
+.title_input{
+	margin-top: 1.2rem;
+	border: 3px solid cadetblue;
+	padding: 20px 3rem;
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+.caption_input{
+	margin-top: 1.2rem;
+	border: 3px solid cadetblue;
+	padding: 20px 3rem;
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+.upload_btn{
+	padding: 15px 3rem;
+	border-radius: 12px;
+	display: block;
+	cursor: pointer;
+	font-size: 1rem;
+	color: grey;
+	margin-top: 1.2rem;
+	border: 3px solid cadetblue;
+}
+
+footer{
+	padding: 1.2rem;
+	color: grey;
+	font-size: 1.3rem;
+	border-top: 1px solid cadetblue;
+}
+
+@media screen and (max-width: 1080px) {
+	/*body{
+		display: none;
+	}*/
+
+	.hamburger{
+		display: block;
+	}
+
+	.hamburger.active .bar:nth-child(2){
+		opacity: 0;
+	}
+
+	.hamburger.active .bar:nth-child(1){
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	.hamburger.active .bar:nth-child(3){
+		transform: translateY(-8px) rotate(-45deg);
+	}
+
+	.navbar{
+		position: fixed;
+		left: -100%;
+		top: 70px;
+		gap: 0;
+		flex-direction: column;
+		width: 100%;
+		text-align: center;
+		transition: 0.3s;
+	}
+
+	.navbar li{
+		margin: 16px 0;
+	}
+
+	.navbar.active{
+		left: 0;
+	}
+}
